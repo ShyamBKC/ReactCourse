@@ -1,0 +1,5 @@
+https://vitejs.dev/guide/
+
+npm create vite@latest
+
+clear index.css
