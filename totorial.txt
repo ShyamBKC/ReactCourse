@@ -1,5 +1,20 @@
 https://vitejs.dev/guide/
 
 npm create vite@latest
+cd app folder
+npm run dev
 
 clear index.css
+
+UserDetails.jsx
+
+Counter.jsx
+
+//function
+  const handleAdd = () => {
+    setCount(count + 1)
+  }
+
+hooks: useState
+api : https://jsonplaceholder.typicode.com/posts
+npm i axios
