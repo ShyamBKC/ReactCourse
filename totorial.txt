@@ -14,7 +14,11 @@ Counter.jsx
   const handleAdd = () => {
     setCount(count + 1)
   }
-
+create new component in .jsx file - shortcut rafce
 hooks: useState
 api : https://jsonplaceholder.typicode.com/posts
+npm i axios
+
+install axios:
+ 
 npm i axios

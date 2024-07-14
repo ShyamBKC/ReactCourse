@@ -1,4 +1,8 @@
 import Counter from "./components/Counter"
+import Form from "./components/Form"
+import Form2 from "./components/Form2"
+import Header from "./components/Header"
+import { Login } from "./components/Login"
 import ToDoList from "./components/ToDoList"
 import UserProfile from "./components/UserProfile"
 
@@ -55,10 +59,29 @@ const App = () => {
       ))
     } */}
      
-{/* <Counter /> */}
+  {/* <Counter /> */}
 
-<ToDoList />
-       
+  {/* <ToDoList /> */}
+
+
+  {/* <inline styling /> */}    
+    {/* <p style={{color:'red'}}>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, sunt. Commodi maxime obcaecati, nostrum explicabo natus fuga repellendus facilis id, hic ipsum corrupti doloribus dolores quam vitae et tempora sunt!
+    </p> */}
+
+{/* <Header /> */}
+{/* <Login /> */}
+
+{/* <Form /> */}
+
+<Form2/>
+
+
+
+
+
+
+
       </div>
   )
 }
