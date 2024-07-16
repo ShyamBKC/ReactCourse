@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import backgroundImage from '../assets/images/cais_bg.jpeg'; // Adjust the relative path
+
 
 const Form2 = () => {
-
     const [formData, setFormData] = useState({
         username: '',
         password: '',
@@ -11,23 +12,19 @@ const Form2 = () => {
         gender: '',
         programming: []
     });
-    
+     
     const handleChange = e => {
         const { name, value, type, checked } = e.target;
 
-        if (type === 'checkbox') {
-            setFormData({
-                ...formData,
-                programming: checked
-                    ? [...formData.programming, value]
-                    : formData.programming.filter(lang => lang !== value)
-            });
-        } else {
-            setFormData({
-                ...formData,
-                [name]: value // dynamically add value to its name
-            });
-        }
+      
+            setFormData((prevState) => ({
+                ...prevState,
+                [name]: type === 'checked' 
+                ? (checked
+                    ? [...prevState.programming,value]
+                    :prevState.programming.filter((lang) => lang !== value))
+                    :value
+        }))
     };
 
     const handleSubmit = e => {
@@ -35,9 +32,20 @@ const Form2 = () => {
         console.log(formData);
     };
 
+    const containerStyle = {
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: '150%', // Adjust this value to make the image appear smaller
+        backgroundPosition: 'center',
+        height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    };
+    
+
     return (
-        <div className='container'>
-            <form onSubmit={handleSubmit}>
+        <div style={containerStyle}>
+            <form onSubmit={handleSubmit} style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '50px', borderRadius: '10px' }}>
                 <label htmlFor='username'>Username </label>
                 <input type='text' name='username'
                     value={formData.username}

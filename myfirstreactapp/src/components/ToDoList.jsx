@@ -35,7 +35,7 @@ if (error) return <span>error fetching data </span>
 
   return <div>
     {
-       todos.slice(0,4)?.map(todo => (
+       todos.slice(0,100)?.map(todo => (
 
         <div  className="container" key={todo.id}>
             <p>id: {todo.id}</p>

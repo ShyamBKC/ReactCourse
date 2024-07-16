@@ -8,7 +8,7 @@ const Counter = () => {
   console.log(fruits);
   //function
   const handleAdd = () => {
-    setCount(count + 1);
+    setCount(prev => prev + 1);
   };
 
   const handleSubstract = () => {
