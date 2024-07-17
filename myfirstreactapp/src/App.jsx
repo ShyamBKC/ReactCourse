@@ -9,7 +9,12 @@ import UserProfile from "./components/UserProfile"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Navbar from "./components/Navbar"
-
+import ErrorPage from "./components/ErrorPage"
+import SinglePage from "./components/SinglePage"
+import PrivateRoute from "./utils/PrivateRoute"
+import AdminRoute from "./utils/AdminRoute"
+import LayoutWithnavbar from "./utils/LayoutWithnavbar"
+ 
 const App = () => {
 
   const userDetails = [
@@ -105,10 +110,28 @@ const fruits = ["apple","mango","orange","orange"]
 <div className="bg-teal-400 border border-black rounded-md h-40"></div>
 
 </div> */}
-<Navbar />
+{/* <Navbar /> */}
 <Routes>
+
+ <Route element = {<LayoutWithnavbar /> } >
   <Route path="/" element={<Home />} /> 
+
+  <Route element = {<PrivateRoute />} >
+        <Route path="/about" element={<About />} />
+   </Route>
+
+   <Route element = {<AdminRoute />} >
+        <Route path="/single/:id" element={<SinglePage />} />
+   </Route>
+
   <Route path="/about" element={<About />} /> 
+  <Route path="/single/:id" element={<SinglePage />} /> 
+  </Route>
+
+
+<Route path="/login" element={<Login />} /> 
+<Route path="*" element={<ErrorPage />} /> 
+
 
 </Routes>
 

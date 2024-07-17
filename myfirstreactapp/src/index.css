@@ -10,10 +10,47 @@
 }
 
 .container{
-    width: 200px;
+    /* width: 200px;
     border: 2px solid salmon;
-    padding: 40px;
-    margin: 40px;
-    width: 50%;   
+    padding: 10px;
+    margin: 10px; */
+    height: 400px;
+    /* width: 200px;    */
     
+}
+
+/* Container for the navbar */
+.navbar {
+  background-color: #333;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+/* List of navbar items */
+.navbar-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Individual navbar item */
+.navbar-item {
+  margin: 0 15px;
+}
+
+/* Links within navbar items */
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+/* Hover effect for links */
+.navbar-link:hover {
+  color: #ff6347;
 }

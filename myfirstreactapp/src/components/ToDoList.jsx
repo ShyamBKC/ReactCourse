@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const ToDoList = () => {
   const [todos, setTodos] = useState([]);
@@ -33,20 +34,21 @@ const [error, setError] = useState('')
 if (isLoading) return <span>loading ......</span>
 if (error) return <span>error fetching data </span>
 
-  return <div>
-    {
-       todos.slice(0,100)?.map(todo => (
-
-        <div  className="container" key={todo.id}>
-            <p>id: {todo.id}</p>
-            <p>title: {todo.title}</p>
-            <p>category: {todo.category}</p>
-           <img src={todo.image} alt="" />
+  return <div className="grid gap-4 grid-cols-4 p-4">
+  {
+    todos.slice(0, 4)?.map(todo => (
+      <Link to={`/single/${todo.id}`} key={todo.id}>
+        <div className="container text-center max-w-xs border p-1 rounded-lg shadow-lg">
+          <p className="font-bold">ID: {todo.id}</p>
+          <p className="text-lg">{todo.title}</p>
+          <p className="text-sm text-gray-500 pb-5">{todo.category}</p>
+          <img className="mt-2" src={todo.image} alt={todo.title} />
         </div>
+      </Link>
+    ))
+  }
+</div>
 
-       ))
-    }
-  </div>;
 };
 
 export default ToDoList;

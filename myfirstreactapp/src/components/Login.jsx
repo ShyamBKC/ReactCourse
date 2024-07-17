@@ -4,7 +4,7 @@ import './Login.css'
 export const Login = () => {
   return (
     <div>
-        <button className={styles.btn}>Login</button>
+        <button>Login</button>
     </div>
   )
 }
