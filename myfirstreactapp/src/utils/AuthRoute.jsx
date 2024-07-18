@@ -1,9 +1,10 @@
 import React from 'react'
-import { Navigate } from 'react-router-dom'
+import { Navigate, Outlet } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
 
 const AuthRoute = () => {
-    const user = true
-    return yser ? <Navigate to = '/admin' /> : <Outlet />
+    const {user} = useAuth()
+    return user ? <Navigate to = '/' /> : <Outlet />
 }
 
 export default AuthRoute

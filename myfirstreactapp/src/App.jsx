@@ -13,6 +13,8 @@ import ErrorPage from "./components/ErrorPage"
 import SinglePage from "./components/SinglePage"
 import PrivateRoute from "./utils/PrivateRoute"
 import AdminRoute from "./utils/AdminRoute"
+import AuthRoute from "./utils/AuthRoute"
+
 import LayoutWithnavbar from "./utils/LayoutWithnavbar"
  
 const App = () => {
@@ -128,8 +130,9 @@ const fruits = ["apple","mango","orange","orange"]
   <Route path="/single/:id" element={<SinglePage />} /> 
   </Route>
 
-
-<Route path="/login" element={<Login />} /> 
+<Route element = {<AuthRoute />} >
+    <Route path="/login" element={<Login />} /> 
+</Route>
 <Route path="*" element={<ErrorPage />} /> 
 
 
