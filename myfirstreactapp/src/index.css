@@ -10,11 +10,13 @@
 }
 
 .container{
-    /* width: 200px;
-    border: 2px solid salmon;
+
+     border: 1px solid rgb(59, 59, 59);
+    
+    /*     width: 200px;;
     padding: 10px;
-    margin: 10px; */
-    height: 400px;
+    margin: 10px; 
+    height: 350px;*/
     /* width: 200px;    */
     
 }
@@ -48,9 +50,19 @@
   text-decoration: none;
   font-size: 16px;
   transition: color 0.3s;
+  margin-left: auto;
 }
 
 /* Hover effect for links */
 .navbar-link:hover {
   color: #ff6347;
+}
+
+
+.btn{
+  @apply p-2 text-white rounded-md
+}
+
+button {
+  @apply p-2 rounded-md bg-slate-900 text-white m-2
 }
